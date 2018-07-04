@@ -13,15 +13,15 @@ register_nav_menus( array(
 ) );
 
 function create_post_type() {
-    register_post_type( 'acme_product',
-      array(
-        'labels' => array(
-          'name' => __( 'Slider' ),
-          'singular_name' => __( 'Slider' )
-        ),
-        'public' => true,
-        'has_archive' => true,
-      )
-    );
-  }
-  add_action( 'init', 'create_post_type' );
+  register_post_type( 'acme_product',
+    array(
+      'labels' => array(
+        'name' => __( 'Slider' ),
+        'singular_name' => __( 'Slider' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
