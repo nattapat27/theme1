@@ -13,19 +13,3 @@ register_nav_menus( array(
 ) );
 
 
-function create_post_type() {
-  add_theme_support( 'post-thumbnails');
-  register_post_type( 'slide',
-    array(
-      'labels' => array(
-        'name' => __( 'slide' ),
-        'singular_name' => __( 'slide' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-      'supports' => array('title', 'editor', 'thumbnail'),
-    )
-  );
-}
-
-add_action( 'init', 'create_post_type' );
