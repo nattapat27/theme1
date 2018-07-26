@@ -12,21 +12,5 @@ register_nav_menus( array(
     'footer' => __('Footer Menu')
 ) );
 
-function create_post_type() {
-    add_theme_support( 'post-thumbnails');
-    register_post_type( 'slide',
-        array(
-            'labels' => array(
-                'name' => __( 'post_with_slide' ),
-                'singular_name' => __( 'slide' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'supports' => array('title', 'editor', 'thumbnail'),
-        )
-    );
-}
-
 require get_template_directory() . '/inc/customizer.php';
-
-add_action( 'init', 'create_post_type' );
+require get_template_directory() . '/inc/slider.php';
