@@ -5,25 +5,30 @@
             $speed = get_theme_mod( 'slider_speed', 4000 );
             if( ! function_exists('pll_register_string')){
                 $titles = array(
-                    'slider_title_1' => get_theme_mod( 'slider_title_1', 'Welcome to Website' )
+                    'slider_title_1' => get_theme_mod( 'slider_title_1', 'Welcome to Website' ),
+                    'slider_title_2' => get_theme_mod( 'slider_title_2', 'Welcome to Website' )
                 );
                 $subtitle = array(
-                    'slider_subtitle_1' => get_theme_mod('slider_subtitle_1', 'Title for the first slide')
+                    'slider_subtitle_1' => get_theme_mod('slider_subtitle_1', 'Title for the first slide'),
+                    'slider_subtitle_2' => get_theme_mod('slider_subtitle_2', 'Title for the first slide')
                 );
             }
             else{
                 $titles = array(
-                    'slider_title_1' => pll__(get_theme_mod( 'slider_title_1', 'Welcome to Website' ))
+                    'slider_title_1' => pll__(get_theme_mod( 'slider_title_1', 'Welcome to Website' )),
+                    'slider_title_2' => pll__(get_theme_mod( 'slider_title_2', 'Welcome to Website' ))
                 );
                 $subtitle = array(
-                    'slider_subtitle_1' => pll__(get_theme_mod('slider_subtitle_1', 'Title for the first slide'))
+                    'slider_subtitle_1' => pll__(get_theme_mod('slider_subtitle_1', 'Title for the first slide')),
+                    'slider_subtitle_2' => pll__(get_theme_mod('slider_subtitle_2', 'Title for the first slide'))
                 );
             }
             $images = array(
-                'slider_image_1' => get_theme_mod( 'slider_image_1', get_template_directory_uri() )
+                'slider_image_1' => get_theme_mod( 'slider_image_1', get_template_directory_uri() ),
+                'slider_image_2' => get_theme_mod( 'slider_image_2', get_template_directory_uri() )
             );
             ?>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-speed="<?php echo esc_attr($speed); ?>">
                 <ol class="carousel-indicators">
                     <?php for($i=0;$i<count($images);$i++){?>
                         <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" <?php if($i==0) { ?>class="active"<?php } ?>></li>
@@ -34,7 +39,8 @@
                         <div class="item <?php if($i==0){ ?>active<?php } ?>">
                             <img src="<?php echo $image ?>">
                         </div>
-                    <?php } $i++; ?>
+                    <?php $i++; 
+                    }  ?>
                 </div>
                 <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
