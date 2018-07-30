@@ -214,7 +214,210 @@
                 'priority' => 17
             )
         );           
-
+        //Image 3
+        $wp_customize->add_setting('options[info]', array(
+                'type'              => 'info_control',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'esc_attr',            
+            )
+        );
+        $wp_customize->add_control( new Sydney_Info( $wp_customize, 's3', array(
+            'label' => 'First slide',
+            'section' => 'slider',
+            'settings' => 'options[info]',
+            'priority' => 18
+            ) )
+        );    
+        $wp_customize->add_setting(
+            'slider_image_3',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'esc_url_raw',
+            )
+        );
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize,
+                'slider_image_3',
+                array(
+                'label'          => 'Upload your first image for the slider',
+                'type'           => 'image',
+                'section'        => 'slider',
+                'settings'       => 'slider_image_3',
+                'priority'       => 19,
+                )
+            )
+        );
+        //Title
+        $wp_customize->add_setting(
+            'slider_title_3',
+            array(
+                'default' => 'Welcome to Sydney',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'slider_title_3',
+            array(
+                'label' => 'Title for the first slide',
+                'section' => 'slider',
+                'type' => 'text',
+                'priority' => 20
+            )
+        );
+        //Subtitle
+        $wp_customize->add_setting(
+            'slider_subtitle_3',
+            array(
+                'default' => 'Feel free to look around',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'slider_subtitle_3',
+            array(
+                'label' => 'Subtitle for the first slide',
+                'section' => 'slider',
+                'type' => 'text',
+                'priority' => 21
+            )
+        );
+        //image 4
+        $wp_customize->add_setting('options[info]', array(
+                'type'              => 'info_control',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'esc_attr',            
+            )
+        );
+        $wp_customize->add_control( new Sydney_Info( $wp_customize, 's4', array(
+            'label' => 'First slide',
+            'section' => 'slider',
+            'settings' => 'options[info]',
+            'priority' => 22
+            ) )
+        );    
+        $wp_customize->add_setting(
+            'slider_image_4',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'esc_url_raw',
+            )
+        );
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize,
+                'slider_image_4',
+                array(
+                'label'          => 'Upload your first image for the slider',
+                'type'           => 'image',
+                'section'        => 'slider',
+                'settings'       => 'slider_image_4',
+                'priority'       => 23,
+                )
+            )
+        );
+        //Title
+        $wp_customize->add_setting(
+            'slider_title_4',
+            array(
+                'default' => 'Welcome to Sydney',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'slider_title_4',
+            array(
+                'label' => 'Title for the first slide',
+                'section' => 'slider',
+                'type' => 'text',
+                'priority' => 24
+            )
+        );
+        //Subtitle
+        $wp_customize->add_setting(
+            'slider_subtitle_4',
+            array(
+                'default' => 'Feel free to look around',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'slider_subtitle_4',
+            array(
+                'label' => 'Subtitle for the first slide',
+                'section' => 'slider',
+                'type' => 'text',
+                'priority' => 25
+            )
+        );
+        //Image 5
+        $wp_customize->add_setting('options[info]', array(
+                'type'              => 'info_control',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'esc_attr',            
+            )
+        );
+        $wp_customize->add_control( new Sydney_Info( $wp_customize, 's5', array(
+            'label' => 'First slide',
+            'section' => 'slider',
+            'settings' => 'options[info]',
+            'priority' => 26
+            ) )
+        );    
+        $wp_customize->add_setting(
+            'slider_image_5',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'esc_url_raw',
+            )
+        );
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize,
+                'slider_image_5',
+                array(
+                'label'          => 'Upload your first image for the slider',
+                'type'           => 'image',
+                'section'        => 'slider',
+                'settings'       => 'slider_image_5',
+                'priority'       => 27,
+                )
+            )
+        );
+        //Title
+        $wp_customize->add_setting(
+            'slider_title_5',
+            array(
+                'default' => 'Welcome to Sydney',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'slider_title_5',
+            array(
+                'label' => 'Title for the first slide',
+                'section' => 'slider',
+                'type' => 'text',
+                'priority' => 28
+            )
+        );
+        //Subtitle
+        $wp_customize->add_setting(
+            'slider_subtitle_5',
+            array(
+                'default' => 'Feel free to look around',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'slider_subtitle_5',
+            array(
+                'label' => 'Subtitle for the first slide',
+                'section' => 'slider',
+                'type' => 'text',
+                'priority' => 28
+            )
+        );
     }
 
     add_action( 'customize_register', 'custom_config' );
