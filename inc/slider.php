@@ -43,6 +43,7 @@
                 'slider_image_5' => get_theme_mod( 'slider_image_5')
             );
             ?>
+
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-speed="<?php echo esc_attr($speed); ?>">
                 <ol class="carousel-indicators">
                     <?php $i=0; 
@@ -54,23 +55,23 @@
                         $i++;
                     } ?>
                 </ol>
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner">
                     <?php $i=0; foreach($images as $image) { 
                         if($image) { ?>
-                            <div class="item <?php if($i==0){ ?>active<?php } ?>">
-                                <img src="<?php echo $image ?>">
+                            <div class="carousel-item <?php if($i==0){ ?>active<?php } ?>">
+                                <img class="d-block w-100" src="<?php echo $image ?>">
                             </div>
                     <?php  
                         }
                         $i++;
                     }  ?>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
             </div>

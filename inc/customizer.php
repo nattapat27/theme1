@@ -418,6 +418,92 @@
                 'priority' => 28
             )
         );
+        // banner
+        $wp_customize->add_section(
+            'banner',
+            array(
+                'title'         => 'Header Banner',
+                'description'   => '',
+                'priority'      => 30,
+                'panel'         => 'header_panel',
+            )
+        );
+        $wp_customize->add_setting(
+            'bannerStyle',
+            array(
+                'default' => 'right',
+                'sanitize_callback' => 'sanitize_layout',
+            )
+        );
+        $wp_customize->add_control(
+            'bannerStyle',
+            array(
+                'label' => 'logo place',
+                'section' => 'banner',
+                'type' => 'select',
+                'description'   => '',  
+                'choices' => array(
+                    'right'   => 'Right',
+                    'right_with_contents'   => 'Right With Contents',
+                    'center' => 'Center'
+                ),     
+                'priority' => 7
+            )
+        );
+        $wp_customize->add_setting(
+            'banner_logo_image',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'esc_url_raw',
+            )
+        );
+        $wp_customize->add_control(
+            new WP_Customize_Image_Control(
+                $wp_customize,
+                'banner_logo_image',
+                array(
+                'label'          => 'Upload your image for the logo',
+                'type'           => 'image',
+                'section'        => 'banner',
+                'settings'       => 'banner_logo_image',
+                'priority'       => 8,
+                )
+            )
+        );
+        $wp_customize->add_setting(
+            'banner_contects',
+            array(
+                'default' => 'Contact tel. 06-66614-233',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'banner_contects',
+            array(
+                'label' => 'contents in banner',
+                'section' => 'banner',
+                'type' => 'text',
+                'priority' => 9
+            )
+        );
     }
 
     add_action( 'customize_register', 'custom_config' );
+
+    function sanitize_layout( $input ) {
+        $valid = array(
+            'right'   => 'Right',
+            'right_with_contents'   => 'Right With Contents',
+            'center' => 'Center'
+        );
+     
+        if ( array_key_exists( $input, $valid ) ) {
+            return $input;
+        } else {
+            return '';
+        }
+    }
+    
+    function sydney_sanitize_text( $input ) {
+        return wp_kses_post( force_balance_tags( $input ) );
+    }

@@ -14,3 +14,5 @@ register_nav_menus( array(
 
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/slider.php';
+require get_template_directory() . '/inc/banner.php';
+require get_template_directory() . '/inc/topbar.php';
