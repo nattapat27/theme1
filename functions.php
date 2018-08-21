@@ -8,8 +8,7 @@ function wordpressTheme_resources(){
 add_action('wp_enqueue_scripts', 'wordpressTheme_resources');
 
 register_nav_menus( array(
-    'primary' => __('Primary Menu'),
-    'footer' => __('Footer Menu')
+    'primary' => __('Primary Menu')
 ) );
 
 require get_template_directory() . '/inc/customizer.php';

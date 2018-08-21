@@ -415,7 +415,7 @@
                 'label' => 'Subtitle for the first slide',
                 'section' => 'slider',
                 'type' => 'text',
-                'priority' => 28
+                'priority' => 29
             )
         );
         // banner
@@ -484,6 +484,235 @@
                 'section' => 'banner',
                 'type' => 'text',
                 'priority' => 9
+            )
+        );
+
+        $wp_customize->add_panel( 'footer', array(
+            'priority'       => 40,
+            'capability'     => 'edit_theme_options',
+            'theme_supports' => '',
+            'title'          => 'Footer area',
+        ) );
+        
+        $wp_customize->add_section(
+            'content_1',
+            array(
+                'title'         => 'Content 1',
+                'description'   => '',
+                'priority'      => 41,
+                'panel'         => 'footer',
+            )
+        );
+        $wp_customize->add_setting(
+            'name_content_1',
+            array(
+                'default' => 'My blog',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'name_content_1',
+            array(
+                'label' => 'name content',
+                'section' => 'content_1',
+                'type' => 'text',
+                'priority' => 42
+            )
+        );
+        $wp_customize->add_setting(
+            'content_1_1',
+            array(
+                'default' => 'Content 1',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_1_1',
+            array(
+                'label' => 'content 1',
+                'section' => 'content_1',
+                'type' => 'text',
+                'priority' => 43
+            )
+        );
+        $wp_customize->add_setting(
+            'content_1_2',
+            array(
+                'default' => 'Content 2',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_1_2',
+            array(
+                'label' => 'content 2',
+                'section' => 'content_1',
+                'type' => 'text',
+                'priority' => 44
+            )
+        );
+        $wp_customize->add_setting(
+            'content_1_3',
+            array(
+                'default' => 'Content 3',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_1_3',
+            array(
+                'label' => 'content 3',
+                'section' => 'content_1',
+                'type' => 'text',
+                'priority' => 45
+            )
+        );
+
+        $wp_customize->add_section(
+            'content_2',
+            array(
+                'title'         => 'Content 2',
+                'description'   => '',
+                'priority'      => 44,
+                'panel'         => 'footer',
+            )
+        );
+        $wp_customize->add_setting(
+            'name_content_2',
+            array(
+                'default' => 'Contents 2',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'name_content_2',
+            array(
+                'label' => 'name content',
+                'section' => 'content_2',
+                'type' => 'text',
+                'priority' => 45
+            )
+        );
+        $wp_customize->add_setting(
+            'content_2_1',
+            array(
+                'default' => 'Content 2',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_2_1',
+            array(
+                'label' => 'content 1',
+                'section' => 'content_2',
+                'type' => 'text',
+                'priority' => 46
+            )
+        );
+        $wp_customize->add_setting(
+            'content_2_2',
+            array(
+                'default' => 'Content 2',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_2_2',
+            array(
+                'label' => 'content 2',
+                'section' => 'content_2',
+                'type' => 'text',
+                'priority' => 47
+            )
+        );$wp_customize->add_setting(
+            'content_2_3',
+            array(
+                'default' => 'Content 2',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_2_3',
+            array(
+                'label' => 'content 3',
+                'section' => 'content_2',
+                'type' => 'text',
+                'priority' => 48
+            )
+        );
+
+
+        $wp_customize->add_section(
+            'content_3',
+            array(
+                'title'         => 'Content 3',
+                'description'   => '',
+                'priority'      => 47,
+                'panel'         => 'footer',
+            )
+        );
+        $wp_customize->add_setting(
+            'name_content_3',
+            array(
+                'default' => 'Contents 3',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'name_content_3',
+            array(
+                'label' => 'name content',
+                'section' => 'content_3',
+                'type' => 'text',
+                'priority' => 48
+            )
+        );
+        $wp_customize->add_setting(
+            'content_3_1',
+            array(
+                'default' => 'Content 1',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_3_1',
+            array(
+                'label' => 'content 1',
+                'section' => 'content_3',
+                'type' => 'text',
+                'priority' => 49
+            )
+        );
+        $wp_customize->add_setting(
+            'content_3_2',
+            array(
+                'default' => 'Content 2',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_3_2',
+            array(
+                'label' => 'content 2',
+                'section' => 'content_3',
+                'type' => 'text',
+                'priority' => 50
+            )
+        );
+        $wp_customize->add_setting(
+            'content_3_3',
+            array(
+                'default' => 'Content 3',
+                'sanitize_callback' => 'sydney_sanitize_text',
+            )
+        );
+        $wp_customize->add_control(
+            'content_3_3',
+            array(
+                'label' => 'content 3',
+                'section' => 'content_3',
+                'type' => 'text',
+                'priority' => 51
             )
         );
     }
